@@ -81,14 +81,8 @@ and open the template in the editor.
 .author-info a {
   color: white;
 }
-img {
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+
+
 
 .slider > a {
   display: inline-flex;
@@ -188,11 +182,87 @@ body {
 
 .button4:hover {background-color: #e7e7e7;}
 
+
+.overlay {
+ 
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
     </style>
     </head>
     <body>
         
-        
+       <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="Add_admin.html">Add Admin</a>
+    <br>
+    <a href="Check_user.html">Check User</a>
+    <br>
+    <a href="Feedback_admin.html">Feedback</a>
+    <br>
+    <a href="Login_admin.html">Logout</a>
+    
+  </div>
+</div>
+
+        <br>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Admin Panel</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script> 
         
         <div class="slider" style="width: 100% " >
   
@@ -204,19 +274,21 @@ body {
 
   <div class="slides" >
     <div id="slide-1" style="width: 100%">
-        <embed src="CasStudy.pdf"  height="500" width="600"/>
+        <embed src="CasStudy.pdf"  height="500" width="900"/>
+       
     </div>
     <div id="slide-2" style="width: 100%">
-      <img src="img2.jpg" >
+     <embed src="E Commerce.pdf"  height="500" width="900"/>
     </div>
     <div id="slide-3" style="width: 100%">
-      <img src="img5.png">
+      <img src="notes.png" height="500" width="900">
     </div>
+      <a href="../../../../AppData/Local/Temp/E Commerce.pdf"></a>
     <div id="slide-4" style="width: 100%">
-      <img src="img3.jpg">
+      
     </div>
     <div id="slide-5" style="width: 100%">
-      <img src="img4.jpg">
+      
     </div>
   </div>
 </div>
@@ -227,8 +299,7 @@ body {
         <!--=======================================================================-->
        
      
- 
-                            <h6>Made by tanvi bangad 2020 &copy; all rights reserved
-                            </h6></center>
+       </center>
+                            
     </body>
 </html>
